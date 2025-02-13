@@ -1,55 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-
-  // ベストプラクティスの設定を継承
   "extends": [
     "config:best-practices",
     ":label(renovate)",
     ":timezone(Asia/Tokyo)"
   ],
-
-  // 設定の移行を自動適用
   "configMigration": true,
-
-  // PRの作成制限（無制限）
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-
-  // 1分に1回実行
   "schedule": [
     "* * * * *"
   ],
-
-  // 自動承認を無効化
   "autoApprove": false,
-
-  // 自動マージを無効化
   "automerge": false,
-
-  // 依存関係ダッシュボードを有効化
   "dependencyDashboard": true,
-
-  // テストの影響を無視
   "ignoreTests": true,
-
-  // Terraform関連の更新ルール
   "packageRules": [
     {
-      // Terraform関連のファイルを対象
       "matchManagers": ["terraform", "terraform-version", "tflint-plugin"],
-
-      // ブランチ名のプレフィックスにディレクトリ名を追加
       "additionalBranchPrefix": "{{packageFileDir}}-",
-
-      // コミットメッセージにディレクトリ名を追加
       "commitMessageSuffix": "({{packageFileDir}})",
-
-      // メジャー・マイナー・パッチすべての更新を適用
       "matchUpdateTypes": ["major", "minor", "patch"],
-
-      // Terraform関連の更新をグループ化
       "groupName": "terraform"
     }
   ]
 }
-
