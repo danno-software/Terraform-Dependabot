@@ -10,3 +10,7 @@ updates:
     open-pull-requests-limit: 10 
     allow:
       - dependency-type: "all"
+    target-branch: main
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
