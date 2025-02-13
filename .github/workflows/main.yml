@@ -1,0 +1,19 @@
+name: Dependabot
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'  # Run at 9am ET on weekdays
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Dependabot
+        uses: dependabot/dependabot-core@v3
+        with:
+          package-ecosystem: terraform
+          directory: /
+          schedule-interval: daily
+          open-pull-requests-limit: 10
+          allow: '{"dependency-type":"all"}'
