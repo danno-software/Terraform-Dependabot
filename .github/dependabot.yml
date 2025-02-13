@@ -5,7 +5,7 @@ updates:
     directory: "/terraform"
     schedule:
       interval: "daily"
-      time: "09:00"
+      time: "06:50"
       timezone: "Asia/Tokyo"
     open-pull-requests-limit: 10 
     allow:
