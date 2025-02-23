@@ -21,7 +21,7 @@
   "prHourlyLimit": 1,
   "prConcurrentLimit": 1,
   "schedule": [
-    "0 0 9 * * *"
+    "* 9 * * *"
   ],
   "autoApprove": false,
   "automerge": false,
