@@ -17,7 +17,7 @@ jobs:
       tf_version: ${{ steps.read_version.outputs.TF_VERSION }}
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
 
       - name: Read Terraform version
         id: read_version
@@ -33,9 +33,9 @@ jobs:
       TF_VERSION: ${{ needs.terraform-setup.outputs.tf_version }}
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
 
       - name: setup terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@ed3a0531877aca392eb870f440d9ae7aba83a6bd # v1
         with:
           terraform_version: ${{ env.TF_VERSION }}
