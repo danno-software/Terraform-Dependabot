@@ -5,9 +5,13 @@
     ":label(renovate)",
     ":timezone(Asia/Tokyo)"
   ],
+  "enabledManagers": [
+    "terraform",
+    "terraform-version"
+  ],
   "configMigration": true,
   "prHourlyLimit": 10,
-  "prConcurrentLimit": 10,
+  "prConcurrentLimit": 0,
   "schedule": [
     "* * * * *"
   ],
@@ -37,7 +41,7 @@
       "rebaseWhen": "behind-base-branch",
       "recreateWhen": "always",
       "matchPackageNames": [
-        "hashicorp/azurerm"
+        "/azurerm/"
       ]
     }
   ]
