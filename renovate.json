@@ -14,6 +14,8 @@
   "automerge": false,
   "ignoreTests": true,
   "prCreation": "immediate",
+  "dependencyDashboard": false,
+
 
   "packageRules": [
     {
@@ -26,7 +28,7 @@
       "separateMinorPatch": false,
       "groupName": "renovate-terraform",
       "labels": ["集計除外", "terraform"],
-      "commitMessage": "feat(terraform): update {{depName}}-version"
+      "commitMessage": "feat(terraform): update terraform-version"
     }
   ]
 }
