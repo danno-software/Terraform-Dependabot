@@ -29,7 +29,7 @@
         "minor",
         "patch"
       ],
-      "additionalBranchPrefix": "{{packageFileDir}}-",
+      "additionalBranchPrefix": "{{packageFileDir}}-test",
       "commitMessageSuffix": "({{packageFileDir}})",
       "groupName": "terraform",
       "labels": [
