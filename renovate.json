@@ -26,7 +26,7 @@
       "separateMinorPatch": false,
       "groupName": "renovate-terraform",
       "labels": ["集計除外", "terraform"],
-      "commitMessage": "chore(deps): update {{depName}} to {{newVersion}}"
+      "commitMessage": "feat(terraform): update {{depName}}-version"
     }
   ]
 }
