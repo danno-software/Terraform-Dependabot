@@ -15,6 +15,11 @@
   "ignoreTests": false,
   "prCreation": "immediate",
   "dependencyDashboard": false,
+  "enabledManagers": [
+    "terraform",
+    "terraform-version",
+    "tflint-plugin"
+  ],
   "packageRules": [
     {
       "matchManagers": [
