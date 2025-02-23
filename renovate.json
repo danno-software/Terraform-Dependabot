@@ -5,8 +5,8 @@
     ":timezone(Asia/Tokyo)"
   ],
   "configMigration": true,
-  "prHourlyLimit": 1,
-  "prConcurrentLimit": 1,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
   "schedule": [
     "* 9 * * *"
   ],
