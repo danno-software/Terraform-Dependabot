@@ -1,27 +1,60 @@
 {
+  // Renovateの設定スキーマ
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  // コメント: Renovateのベストプラクティス設定を継承し、タイムゾーンを東京に設定し、
+  // 'renovate'というラベルを自動付与するようにしている。
   "extends": [
     "config:best-practices",
     ":label(renovate)",
     ":timezone(Asia/Tokyo)"
   ],
+
+  // configMigrationを有効化すると、古いフォーマットの設定があれば新形式へ自動更新しようとする
   "configMigration": true,
+
+  // PRの1時間あたりの上限と同時オープン数の制限をそれぞれ0に設定
+  // 0にすると上限なしになる
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "schedule": [
-    "* * * * *"
-  ],
+
+  // Renovate実行スケジュール: 毎分実行
+  "schedule": ["* * * * *"],
+
+  // 自動承認や自動マージはしない
   "autoApprove": false,
   "automerge": false,
+
+  // 依存関係ダッシュボードを有効化
   "dependencyDashboard": true,
+
+  // テスト関連の更新を無視
   "ignoreTests": true,
+
+  // Terraform関連のパッケージルール設定
   "packageRules": [
     {
+      // Terraform関連のマネージャ（terraform, terraform-version, tflint-plugin）を対象
       "matchManagers": ["terraform", "terraform-version", "tflint-plugin"],
-      "additionalBranchPrefix": "{{packageFileDir}}-",
-      "commitMessageSuffix": "({{packageFileDir}})",
+
+      // すべての更新タイプ(major, minor, patch)を対象に
       "matchUpdateTypes": ["major", "minor", "patch"],
-      "groupName": "terraform"
+
+      // ブランチ名に{{packageFileDir}}-を接頭辞として付与
+      "additionalBranchPrefix": "{{packageFileDir}}-",
+
+      // コミットメッセージの末尾に({{packageFileDir}})を付与
+      "commitMessageSuffix": "({{packageFileDir}})",
+
+      // グループ名をterraformにする
+      "groupName": "terraform",
+
+      // ラベルを追加（'renovate'はextendsで付与されるので重複しない限りこのままでもOK）
+      "labels": ["集計除外", "terraform"],
+
+      // 新しいバージョンが出るたびにコミットを積むようにする設定
+      // （PRがベースブランチより古い場合にリベースや再作成ではなく、追従コミットを積む挙動）
+      "rebaseWhen": "behind-base-branch"
     }
   ]
 }
