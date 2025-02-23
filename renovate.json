@@ -5,12 +5,10 @@
     ":label(renovate)",
     ":timezone(Asia/Tokyo)"
   ],
-  // マネージャーを限定する
   "enabledManagers": [
     "terraform",
     "terraform-version"
   ],
-  // ここから先は必要に応じて設定
   "configMigration": true,
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
