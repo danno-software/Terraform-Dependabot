@@ -9,8 +9,8 @@
     "terraform-version"
   ],
   "configMigration": true,
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 0,
+  "prHourlyLimit": 10,
+  "prConcurrentLimit": 10,
   "schedule": [
     "* * * * *"
   ],
