@@ -10,8 +10,8 @@
     "terraform-version"
   ],
   "configMigration": true,
-  "prHourlyLimit": 20,
-  "prConcurrentLimit": 20,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
   "schedule": [
     "* * * * *"
   ],
@@ -42,7 +42,7 @@
       "rebaseWhen": "behind-base-branch",
       "recreateWhen": "always",
       "matchPackageNames": [
-        "/azurerm/"
+        "hashicorp/azurerm"
       ]
     }
   ]
