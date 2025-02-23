@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: echo TF_VERSION
-        run: echo ${{ env.TF_VERSION }}"
+        run: echo ${{ env.TF_VERSION }}
 
       - name: setup terraform
         uses: hashicorp/setup-terraform@v1
