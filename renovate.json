@@ -8,6 +8,7 @@
   "configMigration": true,
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
+  // スケジュールは例として常にチェック
   "schedule": [
     "* * * * *"
   ],
@@ -17,27 +18,35 @@
   "dependencyDashboardApproval": false,
   "ignoreTests": true,
   "prCreation": "immediate",
+
   "packageRules": [
     {
+      // Terraform 関連を全部まとめる
       "matchManagers": [
         "terraform",
         "terraform-version",
         "tflint-plugin"
       ],
-      "matchUpdateTypes": [
-        "major",
-        "minor",
-        "patch"
-      ],
-      "additionalBranchPrefix": "{{packageFileDir}}-test",
-      "commitMessageSuffix": "({{packageFileDir}})-test",
-      "groupName": "terraform-test",
-      "labels": [
-        "集計除外",
-        "terraform"
-      ],
+      // すべてまとめるため separate 系設定を無効にする
+      "separateMajorMinor": false,
+      "separateMinorPatch": false,
+
+      // まとめて同じ PR にしたい場合は BranchPrefix を空にするか、
+      // 一意の固定値にしておく(例："tf").
+      // もしブランチが一つで良いなら消してしまう。
+      // "additionalBranchPrefix": "tf-",
+
+      // すべてを同じ groupName で処理
+      "groupName": "terraform-danno",
+
+      // もしファイルディレクトリやパッケージ名を無視して全部まとめたいなら
+      // matchPaths を広くとることもできる (コメントアウト例):
+      // "matchPaths": ["**/*.tf", "**/*.tfvars"],
+
+      "labels": ["集計除外", "terraform"],
       "rebaseWhen": "behind-base-branch",
-      "recreateWhen": "always"
+      "recreateWhen": "always",
+      "commitMessageSuffix": "(terraform-test)"
     }
   ]
 }
