@@ -8,7 +8,7 @@
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "schedule": [
-    "* 9 * * *"
+    "* * * * *"
   ],
   "autoApprove": false,
   "automerge": false,
