@@ -38,6 +38,7 @@
         "terraform"
       ],
       "rebaseWhen": "behind-base-branch",
+      "recreateWhen": "always",
       "matchPackageNames": [
         "hashicorp/azurerm"
       ]
