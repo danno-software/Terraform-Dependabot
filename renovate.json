@@ -14,7 +14,7 @@
   "automerge": false,
   "ignoreTests": true,
   "prCreation": "immediate",
-  "dependencyDashboard": true,
+  "dependencyDashboard": false,
   "packageRules": [
     {
       "matchManagers": [
