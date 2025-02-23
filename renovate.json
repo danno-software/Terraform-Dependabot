@@ -18,6 +18,7 @@
   "autoApprove": false,
   "automerge": false,
   "dependencyDashboard": true,
+  "dependencyDashboardApproval": false,
   "ignoreTests": true,
   "packageRules": [
     {
