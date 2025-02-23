@@ -1,24 +1,42 @@
 {
+  "$comment": [
+    "Renovateの設定ファイル (Terraform関連のパッケージ管理用)",
+    "timezone: アジア/東京に設定",
+    "prHourlyLimit: 1時間あたり最大2つのPRを作成",
+    "prConcurrentLimit: 最大5つのPRを同時に保持",
+    "schedule: 毎日午前9時に実行",
+    "autoApprove: 自動承認は無効",
+    "automerge: PR自動マージ無効",
+    "ignoreTests: CIの結果に応じてブロック",
+    "prCreation: すぐにPRを作成",
+    "dependencyDashboard: issue作成しない",
+    "packageRules: Terraform関連の更新をグループ化し、ラベルとコミットメッセージを設定"
+  ],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:best-practices",
     ":timezone(Asia/Tokyo)"
   ],
   "configMigration": true,
-  "prHourlyLimit": 0,
-  "prConcurrentLimit": 0,
+  "prHourlyLimit": 1,
+  "prConcurrentLimit": 1,
   "schedule": [
-    "* * * * *"
+    "0 9 * * *"
   ],
   "autoApprove": false,
   "automerge": false,
-  "ignoreTests": true,
+  "ignoreTests": false,
   "prCreation": "immediate",
   "dependencyDashboard": false,
-
-
   "packageRules": [
     {
+      "$comment": [
+        "Terraform, Terraformバージョン管理, TFLintプラグインの更新対象",
+        "メジャー・マイナー・パッチのバージョン更新をまとめて管理",
+        "グループ名は 'renovate-terraform'",
+        "PRには '集計除外', 'terraform', 'renovate' のラベルを付与",
+        "コミットメッセージ指定"
+      ],
       "matchManagers": [
         "terraform",
         "terraform-version",
@@ -27,8 +45,8 @@
       "separateMajorMinor": false,
       "separateMinorPatch": false,
       "groupName": "renovate-terraform",
-      "labels": ["集計除外", "terraform"],
-      "commitMessage": "feat(terraform): update terraform-version"
+      "labels": ["集計除外", "terraform", "renovate"],
+      "commitMessage": "feat(terraform): update terraform version"
     }
   ]
 }
