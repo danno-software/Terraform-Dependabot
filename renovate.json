@@ -5,6 +5,12 @@
     ":label(renovate)",
     ":timezone(Asia/Tokyo)"
   ],
+  // マネージャーを限定する
+  "enabledManagers": [
+    "terraform",
+    "terraform-version"
+  ],
+  // ここから先は必要に応じて設定
   "configMigration": true,
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
@@ -19,8 +25,7 @@
     {
       "matchManagers": [
         "terraform",
-        "terraform-version",
-        "tflint-plugin"
+        "terraform-version"
       ],
       "matchUpdateTypes": [
         "major",
@@ -36,7 +41,7 @@
       ],
       "rebaseWhen": "behind-base-branch",
       "matchPackageNames": [
-        "/azurerm/"
+        "hashicorp/azurerm"
       ]
     }
   ]
