@@ -1,8 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":disableDependencyDashboard"
+    "config:best-practices",
+    ":label(renovate)",
+    ":timezone(Asia/Tokyo)"
   ],
   "enabledManagers": [
     "terraform",
@@ -16,6 +17,8 @@
   ],
   "autoApprove": false,
   "automerge": false,
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": false,
   "ignoreTests": true,
   "packageRules": [
     {
