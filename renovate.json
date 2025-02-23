@@ -10,8 +10,8 @@
     "terraform-version"
   ],
   "configMigration": true,
-  "prHourlyLimit": 10,
-  "prConcurrentLimit": 10,
+  "prHourlyLimit": 20,
+  "prConcurrentLimit": 20,
   "schedule": [
     "* * * * *"
   ],
@@ -20,6 +20,7 @@
   "dependencyDashboard": true,
   "dependencyDashboardApproval": false,
   "ignoreTests": true,
+  "prCreation": "immediate",
   "packageRules": [
     {
       "matchManagers": [
