@@ -27,11 +27,11 @@
       ],
       "separateMajorMinor": false,
       "separateMinorPatch": false,
-      "groupName": "terraform",
+      "groupName": "renovate-terraform",
       "labels": ["集計除外", "terraform"],
       "rebaseWhen": "behind-base-branch",
       "recreateWhen": "always",
-      "commitMessageSuffix": "renovate-terraform"
+      "commitMessageSuffix": ""
     }
   ]
 }
