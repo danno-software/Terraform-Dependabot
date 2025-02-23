@@ -30,8 +30,8 @@
         "patch"
       ],
       "additionalBranchPrefix": "{{packageFileDir}}-test",
-      "commitMessageSuffix": "({{packageFileDir}})",
-      "groupName": "terraform",
+      "commitMessageSuffix": "({{packageFileDir}})-test",
+      "groupName": "terraform-test",
       "labels": [
         "集計除外",
         "terraform"
