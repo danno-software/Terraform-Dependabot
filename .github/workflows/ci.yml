@@ -21,9 +21,7 @@ jobs:
 
       - name: Read Terraform version
         id: read_version
-        run: |
-          TF_VERSION=$(head -n 1 terraform/.terraform-version)s
-          echo "TF_VERSION=$TF_VERSION" >> $GITHUB_OUTPUT
+        run: echo "TF_VERSION=$(<terraform/.terraform-version)" >> $GITHUB_OUTPUT
 
   terraform-format:
     name: 'terraform format'
