@@ -25,23 +25,8 @@
       "separateMajorMinor": false,
       "separateMinorPatch": false,
       "groupName": "renovate-terraform",
-      "labels": [
-        "集計除外",
-        "terraform"
-      ],
-      "rebaseWhen": "behind-base-branch",
-
-      // ▼ ここからがカスタマイズ例
-      // 複数の依存関係をまとめる際は {{{updateSummary}}} を使うと便利です
-      "prTitle": "Terraformバージョンアップ ({{{updateSummary}}})",
-      // 単一の依存関係であれば下記のように depName/newVersion もよく使われます
-      // "prTitle": "chore(terraform): update {{{depName}}} to v{{{newVersion}}}",
-
-      // ブランチ名にまとめていることを明示
-      "branchName": "renovate/terraform-updates"
-      // 単一の依存関係ごとに分ける場合は下記のような例もあります
-      // "branchName": "renovate/terraform-{{{depName}}}-{{{newVersion}}}"
-      // ▲ ここまでがカスタマイズ例
+      "labels": ["集計除外", "terraform"],
+      "commitMessage": "chore(deps): update {{depName}} to {{newVersion}}"
     }
   ]
 }
