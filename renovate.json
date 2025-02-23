@@ -12,7 +12,7 @@
   ],
   "autoApprove": false,
   "automerge": false,
-  "ignoreTests": false,
+  "ignoreTests": true,
   "prCreation": "immediate",
   "dependencyDashboard": false,
   "packageRules": [
