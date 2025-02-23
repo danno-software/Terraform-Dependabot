@@ -25,7 +25,8 @@
     {
       "matchManagers": [
         "terraform",
-        "terraform-version"
+        "terraform-version",
+        "terraform-azurerm"
       ],
       "matchUpdateTypes": [
         "major",
