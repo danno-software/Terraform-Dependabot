@@ -40,6 +40,9 @@
       // すべての更新タイプ(major, minor, patch)を対象に
       "matchUpdateTypes": ["major", "minor", "patch"],
 
+      // azurermを追加
+      "matchPackagePatterns": ["azurerm"],
+
       // ブランチ名に{{packageFileDir}}-を接頭辞として付与
       "additionalBranchPrefix": "{{packageFileDir}}-",
 
@@ -58,3 +61,4 @@
     }
   ]
 }
+
