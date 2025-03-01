@@ -33,5 +33,7 @@
       "labels": ["集計除外", "terraform", "renovate"],
       "commitMessage": "feat(terraform): update terraform version"
     }
-  ]
+  ],
+  "rebaseWhen": "never",
+  "autoclosePrWhenSuperseded": true
 }
