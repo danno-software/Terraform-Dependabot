@@ -34,5 +34,5 @@
       "commitMessage": "feat(terraform): update terraform version"
     }
   ],
-  "rebaseWhen": "always"
+  "rebaseWhen": "auto"
 }
