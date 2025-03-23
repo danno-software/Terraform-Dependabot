@@ -14,7 +14,7 @@
   "automerge": false,
   "ignoreTests": false,
   "prCreation": "immediate",
-  "dependencyDashboard": false,
+  "dependencyDashboard": true,
   "enabledManagers": [
     "terraform",
     "terraform-version",
